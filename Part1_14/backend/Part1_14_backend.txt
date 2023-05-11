@@ -1,0 +1,4 @@
+1. git clone https://github.com/docker-hy/material-applications.git
+2. create Dockerfile
+3. docker build . -t part1_14_backend
+4. docker run -p 127.0.0.1:8000:8000 part1_14_backend ./server

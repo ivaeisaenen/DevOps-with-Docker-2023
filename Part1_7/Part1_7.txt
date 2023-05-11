@@ -1,0 +1,4 @@
+1. Create script.sh
+2. Create dockerfile
+3. docker build . -t curler
+4. docker run -it curler

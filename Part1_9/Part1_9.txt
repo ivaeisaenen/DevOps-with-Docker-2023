@@ -1,0 +1,2 @@
+1. Make sure pwd has log.text file
+2. docker run -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
