@@ -1,0 +1,1 @@
+Removed exposed ports 5000 and 8000 from Dockerfiles and also yml file as only nginx need to have access outside from port 80

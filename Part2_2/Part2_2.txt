@@ -1,0 +1,2 @@
+1. Create docker-compose.yml file
+2. docker compose up

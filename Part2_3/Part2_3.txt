@@ -1,0 +1,5 @@
+1. git clone https://github.com/docker-hy/material-applications.git
+2. Create docker-compose.yml file
+3. Create Dockerfile-frontend
+4. Create Dockerfile-backend
+2. docker compose up

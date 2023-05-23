@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+    part2_6_front:
+      build:
+        context: .
+        dockerfile: Dockerfile-frontend
+      ports:
+        - 5000:5000
+      container_name: part2_6_frontend
+
+    part2_6_back:
+      environment: 
+       REDIS_HOST: part2_6_redis
+      depends_on:
+       - part2_6_redis
+       - part2_6_postgres
+      build:
+        context: .
+        dockerfile: Dockerfile-backend
+      ports:
+        - 8000:8000
+      command: ["./server"]
+      container_name: part2_6_backend
+
+    part2_6_redis:
+      image: redis:7.0.11-alpine3.18
+      restart: unless-stopped
+      command: ["redis-server"]
+      container_name: part2_6_redis
+        
+    part2_6_postgres:
+      image: postgres:15.3-alpine3.18
+      restart: unless-stopped
+      environment:
+        POSTGRES_HOST: part2_6_postgres
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DATABASE: postgres
+      container_name: part2_6_postgres
+      
+        
+        
+    
+    

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+    part2_4_front:
+      build:
+        context: .
+        dockerfile: Dockerfile-frontend
+      ports:
+        - 5000:5000
+      container_name: part2_4_frontend
+
+    part2_4_back:
+      environment: 
+       - REDIS_HOST=part2_4_redis
+      depends_on:
+       - part2_4_redis
+      build:
+        context: .
+        dockerfile: Dockerfile-backend
+      ports:
+        - 8000:8000
+      command: ["./server"]
+      container_name: part2_4_backend
+
+    part2_4_redis:
+        image: redis:7.0.11-alpine3.18
+        command: ["redis-server"]
+        container_name: part2_4_redis
+    

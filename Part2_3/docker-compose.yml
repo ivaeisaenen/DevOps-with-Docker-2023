@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+    part2_3_front:
+      build:
+        context: .
+        dockerfile: Dockerfile-frontend
+      ports:
+        - 5000:5000
+      container_name: part2_3_frontend
+
+    part2_3_back:
+      build:
+        context: .
+        dockerfile: Dockerfile-backend
+      ports:
+        - 8000:8000
+      command: ["./server"]
+      container_name: part2_3_backend
