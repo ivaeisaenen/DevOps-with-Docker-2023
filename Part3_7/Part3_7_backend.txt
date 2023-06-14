@@ -1,0 +1,5 @@
+# Originally Part1_13.txt and modified for Part3_5 and futher modified for Part3_6 & Part3_7
+1. git clone https://github.com/docker-hy/material-applications.git
+2. create Dockerfile-backend
+3. docker build -f Dockerfile-backend . -t part3_7_backend
+4. docker run -p 127.0.0.1:8080:8080 part3_7_backend ./server

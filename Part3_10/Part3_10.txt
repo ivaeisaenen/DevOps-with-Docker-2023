@@ -1,0 +1,23 @@
+1. Copy script.sh and Dockerfile from Part1_4
+2. Edit Dockerfile (Change from ubuntu to alpine and save script.sh correct encoding to remove dos2unix)
+3. docker build . -t part3_10
+4. docker run -it part3_10
+
+Dockerfile before:
+FROM ubuntu:18.04
+WORKDIR /usr/src/app
+COPY script.sh .
+RUN chmod +x script.sh
+RUN apt update
+RUN apt install -y curl
+RUN apt install dos2unix
+RUN dos2unix ./script.sh
+CMD ./script.sh
+
+Dockerfile after:
+FROM alpine:3.18
+WORKDIR /usr/src/app
+COPY script.sh .
+RUN chmod +x script.sh
+RUN apk --no-cache add curl
+CMD ./script.sh

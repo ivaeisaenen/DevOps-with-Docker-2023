@@ -1,0 +1,5 @@
+# Originally Part1_12.txt and modified for Part3_5 and futher modified for Part3_6 & Part3_7 & Part3_8
+1. git clone https://github.com/docker-hy/material-applications.git
+2. create Dockerfile-frontend
+3. docker build -f Dockerfile-frontend . -t part3_8_frontend
+4. docker run -p 127.0.0.1:5000:5000 part3_8_frontend

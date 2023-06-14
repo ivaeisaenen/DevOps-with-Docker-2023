@@ -1,0 +1,4 @@
+1. Create builder.sh
+2. Create Dockerfile
+3. docker build . -t part3_4
+4. docker run --privileged --name part3_4 -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_USERNAME=$DOCKER_USERNAME -e DOCKER_PASSWORD=$DOCKER_PASSWORD part3_4 mluukkai/express_app ivaeisaenen/testing2
